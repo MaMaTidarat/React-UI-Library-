@@ -5,7 +5,7 @@ jobs:
     name: Test-Build-Release
 
     runs-on: ubuntu-latest
-  
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -26,9 +26,3 @@ jobs:
 
       - name: Build
         run: yarn build
-
-      - name: Release
-      env: 
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: yarn semantic-release
